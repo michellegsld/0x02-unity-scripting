@@ -50,5 +50,10 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Score: " + score);
             Destroy(other.gameObject);
         }
+        else if (other.gameObject.tag == "Trap")
+        {
+            health--;
+            Debug.Log("Health: " + health);
+        }
     }
 }
