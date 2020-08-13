@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,12 +10,18 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 2.5f * Time.deltaTime;
     }
 
     // Update is called once per frame
     void Update()
     {
+        speed = 15f * Time.deltaTime;
+
+        if (health == 0)
+        {
+            Debug.Log("Game Over!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKeyDown("w"))
         {
             Vector3 position = this.transform.position;
