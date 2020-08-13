@@ -44,16 +44,22 @@ public class PlayerController : MonoBehaviour
     // Increment the value of score when the Player touches the Pickup tag
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Pickup")
+        string tag = other.gameObject.tag;
+
+        if (tag == "Pickup")
         {
             score++;
             Debug.Log("Score: " + score);
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.tag == "Trap")
+        else if (tag == "Trap")
         {
             health--;
             Debug.Log("Health: " + health);
+        }
+        else if (tag == "Goal")
+        {
+            Debug.Log("You win!");
         }
     }
 }
