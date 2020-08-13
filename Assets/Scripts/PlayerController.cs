@@ -3,6 +3,7 @@
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    private int score = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,17 @@ public class PlayerController : MonoBehaviour
             Vector3 position = this.transform.position;
             position.x -= speed;
             this.transform.position = position;
+        }
+    }
+
+    // Increment the value of score when the Player touches the Pickup tag
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Pickup")
+        {
+            score++;
+            Debug.Log("Score: " + score);
+            Destroy(other.gameObject);
         }
     }
 }
