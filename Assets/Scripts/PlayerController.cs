@@ -3,6 +3,7 @@
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public int health = 5;
     private int score = 0;
 
     // Start is called before the first frame update
