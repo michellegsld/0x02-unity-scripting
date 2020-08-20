@@ -22,28 +22,28 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Game Over!");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKeyDown("w"))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
             Vector3 position = this.transform.position;
             position.z += speed;
             this.transform.position = position;
         }
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKeyDown("a"))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             Vector3 position = this.transform.position;
-            position.x += speed;
+            position.x -= speed;
             this.transform.position = position;
         }
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKeyDown("s"))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             Vector3 position = this.transform.position;
             position.z -= speed;
             this.transform.position = position;
         }
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKeyDown("d"))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             Vector3 position = this.transform.position;
-            position.x -= speed;
+            position.x += speed;
             this.transform.position = position;
         }
     }
